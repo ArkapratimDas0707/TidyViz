@@ -1,130 +1,89 @@
-# TidyViz
+# 📌 What is TidyViz?
 
-TidyViz is an interactive web application that automatically cleans, analyzes, and visualizes datasets through a modern dark interface.
+**TidyViz** is an interactive data cleaning and visualization tool built with Python and Streamlit.  
+It is designed to help data analysts, data scientists, and anyone working with raw datasets quickly:
 
-Upload a dataset (CSV, Excel, or Parquet), click Run Analysis, and TidyViz will:
-- Ingest your data
-- Clean it intelligently (imputation, outlier handling, duplicates, mixed-type fixes)
-- Generate a full statistical report
-- Create interactive visualizations
-- Let you download a cleaned version of your dataset
+- 🧹 **Clean messy data automatically**  
+  - Handle mixed data types (e.g., numeric values stored as strings)
+  - Impute missing values intelligently (median, mean, or KNN-based)
+  - Detect and cap outliers using IQR
+  - Remove or review duplicate rows
+  - Produce a transparent, step‑by‑step cleaning log
+
+- 📊 **Explore and visualize your data effortlessly**  
+  - Generate descriptive statistics
+  - Compute and visualize correlations
+  - Create interactive charts (histograms, bar plots, heatmaps) in a dark theme
 
 ---
 
-## Quick Start
+## 🎯 Intended Purpose
 
-### Requirements
-- Python 3.9 or higher
-- Install dependencies:
-```bash
-pip install -r requirements.txt
+TidyViz is intended to:
+- Accelerate **exploratory data analysis (EDA)** by automating repetitive preprocessing tasks.
+- Provide a **user-friendly interface** for non‑technical users to upload and clean datasets.
+- Offer **transparency** in data cleaning with detailed logs.
+- Enable quick **visual insights** without writing a single line of code.
 
-# Run the app
-streamlit run app.py
-Open the local URL shown in your terminal (usually http://localhost:8501).
+Simply upload your CSV file, click **Run Analysis**, and TidyViz will handle the rest — giving you a cleaned dataset and rich visual insights ready for further analysis or modeling.
 
-Upload and Analyze
-Open the app in your browser.
+## ✨ Key Features of TidyViz
 
-Use the sidebar to upload your dataset (.csv, .xlsx, or .parquet).
+TidyViz is designed to make data cleaning and exploration seamless and enjoyable, with features such as:
 
-Click Run Analysis.
+- 🧠 **Intelligent Imputation**  
+  Automatically analyzes missingness patterns and chooses the best strategy:  
+  - Median for <5% missing  
+  - Mean for larger gaps  
+  - KNN-based if there’s strong correlation  
+  - Most-frequent for categorical columns  
 
-Review the automatic cleaning log, statistical summary, and interactive charts.
+- 🚦 **Outlier Handling**  
+  Detects and caps outliers using the IQR method to prevent extreme values from skewing your analysis.
 
-Download the cleaned dataset as a CSV.
+- 📈 **Generates Rich Summaries**  
+  Outputs descriptive statistics and correlation matrices so you get a quick overview of your dataset.
 
-Features
-Data Ingestion
-Supports CSV, Excel, and Parquet.
+- 📊 **Interactive Plotly Graphs**  
+  Creates interactive histograms, bar charts, and correlation heatmaps for an engaging visual exploration.
 
-Automatically detects file type and loads into a pandas DataFrame.
+- 🔄 **De‑duplicates Data**  
+  Automatically identifies and optionally removes duplicate rows.
 
-Generates an ingestion report showing column data types and missing-value percentages.
+- 🖤 **Sleek Dark‑Themed UI**  
+  A modern, glassmorphism‑inspired dark theme that looks professional and feels comfortable to use.
 
-Cleaning Pipeline
-When data is loaded, TidyViz runs these steps:
+- 🖱️ **Easy and Intuitive Front End**  
+  Powered by Streamlit, just upload your CSV and click **Run Analysis** — no code required.
 
-Mixed-type conversion: object columns containing numeric-looking values are converted to numeric.
+---
 
-Duplicate handling: detects and drops exact duplicate rows.
+TidyViz helps you save time, improve your workflow, and explore your data with clarity and style.
 
-Smart missing-value imputation:
+## 🚀 How to Use TidyViz
 
-Numeric columns with less than 5% missing values are filled with the median.
+Using **TidyViz** is simple and intuitive. Follow these steps to get started:
 
-Numeric columns with higher correlation to others use KNN imputation.
+1. **Open the App**  
+   Visit the deployed TidyViz application here:  
+   👉 [https://tidyviz.streamlit.app/](https://tidyviz.streamlit.app/)
 
-Otherwise, numeric columns are filled with the mean.
+2. **Upload Your Dataset**  
+   - On the left sidebar, click on **📂 Upload CSV**.
+   - Select a CSV file from your computer.
+   - Once uploaded, click on **Run Analysis**.
 
-Categorical columns are filled with the most frequent category.
+3. **Automatic Cleaning & Processing**  
+   - TidyViz will:
+     - 🧹 Automatically clean your dataset (intelligent imputation, outlier handling, and de-duplication).
+     - 📊 Generate descriptive summaries and correlations.
+     - 🎨 Create interactive **Plotly** charts for deeper exploration.
 
-Outlier capping (IQR method): for each numeric column, values outside 1.5×IQR are clipped to the boundary.
+4. **Review & Download**  
+   - Inspect the **cleaning log** to see what transformations were applied.
+   - View **interactive graphs** and **statistical summaries**.
+   - Download the cleaned dataset by clicking **⬇️ Download Cleaned CSV**.
 
-All steps log what was done so you can review them.
-
-Analysis and Visualization
-After cleaning, TidyViz performs automated analysis:
-
-Statistical Summary:
-
-Row and column counts
-
-Descriptive statistics (mean, standard deviation, quartiles)
-
-Correlation matrix for numeric columns
-
-Visualizations (using Plotly in dark theme):
-
-Histograms for each numeric column
-
-Bar charts: mean of numeric features grouped by categorical features
-
-Correlation heatmap for numeric columns
-
-Interface
-The app uses Streamlit with a custom dark glassmorphism theme:
-
-Dark backgrounds and blurred glass-like panels
-
-Sidebar for uploading files and running analysis
-
-Inline logs, summaries, and interactive charts
-
-One-click CSV download for cleaned data
-
-Tech Stack
-pandas, numpy — data manipulation
-
-scikit-learn — KNN imputation and preprocessing
-
-Plotly — interactive visualizations
-
-Streamlit — web app framework
-
-Example Workflow
-Upload a CSV with mixed types, missing values, and outliers.
-
-TidyViz:
-
-Fixes mixed types
-
-Drops duplicates
-
-Imputes missing values
-
-Caps outliers
-
-Displays:
-
-Cleaning log
-
-Statistical summary
-
-Interactive histograms, bar charts, and heatmaps
-
-Allows you to download the cleaned CSV.
-
-License
-MIT License — free to use, modify, and distribute
+That’s it! 🎉  
+Your data is now tidy, visualized, and ready for analysis.
 
