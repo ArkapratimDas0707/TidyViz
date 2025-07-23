@@ -1,0 +1,75 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+*.log
+
+# --- Environment & virtualenv ---
+.venv/
+venv/
+env/
+ENV/
+*.env
+.env.*
+*.local
+pip-wheel-metadata/
+
+# --- Jupyter / IPython ---
+.ipynb_checkpoints/
+.profile_default/
+.ipython/
+
+# --- Streamlit specific ---
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# --- Data files (optional, if you store local CSVs) ---
+*.csv
+*.tsv
+*.parquet
+*.xlsx
+*.xls
+*.db
+*.sqlite
+
+# --- PDFs & generated reports ---
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# --- Mac / Windows OS files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- Logs ---
+*.log
+logs/
+*.tmp
+
+# --- Deployment ---
+*.zip
+*.tar
+*.gz
+node_modules/
+
+# --- Optional caches ---
+__pycache__/
+.cache/
+*.pyc
+*.pkl
